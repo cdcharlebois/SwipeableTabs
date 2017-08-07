@@ -74,6 +74,7 @@ define([
 
         _updateRendering: function(callback, titles) {
             logger.debug(this.id + "._updateRendering");
+            var self = this;
             var swiper = new Swiper('.swiper-container', {
                 pagination: '.swiper-pagination',
                 slidesPerView: 1,
@@ -81,12 +82,18 @@ define([
                 loop: true,
                 paginationBulletRender: function(index, className) {
                     if (index === (titles.length - 1)) {
-                        return '<span class="widget-tabnav ' + className + '">' + titles[index] + '</span>' +
+                        return '<span data-index="' + index + '" class="widget-tabnav ' + className + '">' +
+                            titles[index] + '</span>' +
                             '<div class="active-mark "></div>';
                     }
-                    return '<span class="widget-tabnav ' + className + '">' + titles[index] + '</span>';
+                    return '<span data-index="' + index + '" class="widget-tabnav ' + className + '">' + titles[index] + '</span>';
+                },
+                onSlideChangeStart: function(swiper) {
+                    lang.hitch(self, self._fixActiveMark(titles))
                 }
             });
+            this._fixActiveMark(titles);
+            this._hidePagination();
 
             // if (this._contextObj !== null) {
             //     dojoStyle.set(this.domNode, "display", "block");
@@ -95,6 +102,23 @@ define([
             // }
 
             this._executeCallback(callback);
+        },
+
+        _hidePagination: function() {
+            // this.domNode.parentElement.querySelector('div.mx-tabcontainer').querySelector('ul.nav-tabs').style.display = 'none';
+        },
+
+        _fixActiveMark: function(titles) {
+            var pagination = this.domNode.parentElement.querySelector('div.mx-tabcontainer').querySelector('ul.nav-tabs'),
+                totalWidth = pagination.getBoundingClientRect().width,
+                activeMarkWidth = totalWidth / titles.length,
+                selected = document.querySelector('.widget-tabnav.swiper-pagination-bullet-active').dataset.index,
+                activeMarker = pagination.querySelector('.active-mark');
+
+            activeMarker.style.width = activeMarkWidth + 'px';
+            activeMarker.style.left = (selected * 1) * activeMarkWidth + 'px';
+
+
         },
 
         _executeCallback: function(cb) {

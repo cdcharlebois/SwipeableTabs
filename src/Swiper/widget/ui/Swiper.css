@@ -12,6 +12,17 @@ ul.nav.nav-tabs.mx-tabcontainer-tabs.swiper-pagination {
     align-items: center;
 }
 
+.active-mark {
+    background: #ffeb3b;
+    width: 25%;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    top: 33px;
+    -webkit-transition: left 0.2s ease-out;
+    transition: left 0.2s ease-out;
+}
+
 
 /**
  * Swiper 3.4.2

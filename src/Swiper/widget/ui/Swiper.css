@@ -10,10 +10,12 @@ ul.nav.nav-tabs.mx-tabcontainer-tabs.swiper-pagination {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    background-color: whitesmoke;
 }
 
 .active-mark {
-    background: #ffeb3b;
+    /* background: #ffeb3b; */
+    background: #999;
     width: 25%;
     height: 4px;
     position: absolute;
@@ -236,10 +238,13 @@ ul.nav.nav-tabs.mx-tabcontainer-tabs.swiper-pagination {
 }
 
 .swiper-pagination-bullet {
-    background-color: tomato;
-    color: black;
+    /* background-color: tomato; */
+    color: #111;
     display: inline-flex;
     flex: 1 25%;
+    display: block;
+    text-align: center;
+    /* font-weight: bold; */
     /* padding: 0.6em; */
     /* width: 8px;
     height: 8px;
@@ -270,7 +275,8 @@ button.swiper-pagination-bullet {
 
 .swiper-pagination-bullet-active {
     opacity: 1;
-    background: #007aff
+    font-weight: bold;
+    /* background: #007aff  */
 }
 
 .swiper-pagination-white .swiper-pagination-bullet-active {

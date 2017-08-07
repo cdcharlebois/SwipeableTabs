@@ -6,10 +6,27 @@
     <icon />
 
     <properties>
-        <property key="dummyKey" type="string" required="false" defaultValue="">
-            <caption>Dummy key</caption>
-            <category>Appearance</category>
-            <description>This key was added to make the widget work in the Modeler (needs atleast 1 key). Please change/remove this one</description>
-        </property>
+    <!-- Set background color for tabs: .swiper-pagination-bullet  -->
+    <!--Set background color/styles for selected tab: .swiper-pagination-bullet-active  -->
+    <property key="ActiveMarkerBackgroundColor" type="string" required="false" defaultValue="">
+        <caption>Active Marker color</caption>
+        <category>Appearance</category>
+        <description>Color of the thick underline to highlight the selected tab (Leave as empty to style with CSS, using the class `.active-mark`).</description>
+    </property>
+    <property key="TabsBackgroundColor" type="string" required="false" defaultValue="">
+        <caption>Tabs Background Color</caption>
+        <category>Appearance</category>
+        <description>Background color for the tabs. Defaults to 'whitesmoke'</description>
+    </property>
+    <property key="ClassToAddToTabs" type="string" required="false" defaultValue="">
+        <caption>Tabs Class (To Add)</caption>
+        <category>Appearance</category>
+        <description>Use for custom styling</description>
+    </property>
+       <property key="ShowPagination" type="boolean" required="true" defaultValue="true">
+           <caption>Show Pagination</caption>
+           <category>Appearance</category>
+           <description>Set to 'false' to hide the tab headers. This makes the tabs appear as multiple pages that can be swiped between.</description>
+       </property>
     </properties>
 </widget>

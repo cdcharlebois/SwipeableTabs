@@ -117,7 +117,7 @@ define([
                 })
                 .map(function(el) { return el.innerHTML }),
                 slides = Array.from(wrapper.children)
-                .filter(function(el) { return el.style.display != 'none' }); // only slides that can be seen
+                .filter(function(el) { return el.style.display != 'none' }); // only slides that can be seenƒ
 
             // store these variables for retrieval later
             this.containerEl = container;

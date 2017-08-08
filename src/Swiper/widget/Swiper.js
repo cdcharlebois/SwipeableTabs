@@ -78,7 +78,6 @@ define([
                 pagination: '.swiper-pagination.' + this.id,
                 slidesPerView: 1,
                 paginationClickable: true,
-                loop: true,
                 paginationBulletRender: lang.hitch(this, function(index, className) {
                     if (index === (this.titles.length - 1)) {
                         return '<span data-index="' + index + '" class="widget-tabnav ' + className + '">' +

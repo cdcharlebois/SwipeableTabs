@@ -1,8 +1,3 @@
----
-typora-copy-images-to: ./assets
-typora-root-url: .
----
-
 ![badge](https://img.shields.io/badge/mendix-7.5.1-green.svg)
 
 ![badge](https://img.shields.io/badge/mobile-friendly-green.svg)

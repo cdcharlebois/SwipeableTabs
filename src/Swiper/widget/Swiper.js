@@ -136,7 +136,7 @@ define([
             Array.from(slides).forEach(function(el) {
                 dojoClass.add(el, 'swiper-slide');
                 el.style.display = 'block';
-                dijit.registry.byId('mxui_widget_TabContainer_0').showTab(dijit.registry.byId(el.id))
+                dijit.registry.byId(container.id).showTab(dijit.registry.byId(el.id))
             })
 
             // 

@@ -1,6 +1,6 @@
 {
   "name": "Swiper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper for the Swiper library to show a Tab Container or pages as a swipeable set",
   "license": "Apache 2",
   "author": "Conner Charlebois",

@@ -11,6 +11,7 @@ ul.nav.nav-tabs.mx-tabcontainer-tabs.swiper-pagination {
     justify-content: space-between;
     align-items: center;
     background-color: whitesmoke;
+    margin: 0;
 }
 
 .active-mark {
